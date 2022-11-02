@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin-left: 10px;
+    font-family: "Comic Sans MS" , serif;
+}
+img{
+    width: 200px;
+}
+.target{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: darkblue;
+}
+.list{
+    font-size: 26px;
+    color: coral;
+}
+.h2_title{
+    color: cornflowerblue;
+}
+.color_false{
+    color: red;
+}
+.color_true{
+    color: green;
+}
+.color_age{
+    color: darkviolet;
+}
