@@ -8,10 +8,12 @@ for (let i= 1; i<11; i++) {
     document.write(`<div class="hello">Hello my ${i} friend </div>`)
 }
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
-// let i = 1
-// while (i < 21 ){
-//     document.write(`<div class="hello">Hello</div>`)
-// }
+document.write("--")
+let k = 1
+while(k < 21){
+    document.write(`<h1>HOW ARE YOU MY FRIEND</h1>`)
+    k++
+}
 
 
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
