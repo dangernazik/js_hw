@@ -31,19 +31,19 @@ let book4 = {
     title: "Tom Sawyer",
     pageCount: 245,
     genre: 'adventure',
-    authors: [name = "Mark Twain", age = 41]
+    authors: ["Mark Twain", 41]
 }
 let book5 = {
     title: "Art of war",
     pageCount: 300,
     genre: 'documentary',
-    authors: [name = "Sūn Zǐ", age = 49]
+    authors: ["Sūn Zǐ", 49]
 }
 let book6 = {
     title: "Peter Pan",
     pageCount: 245,
     genre: 'adventure',
-    authors: [name = "James Matthew Barrie", age = 46]
+    authors: ["James Matthew Barrie", 46]
 }
 console.log(book4, book5, book6)
 
