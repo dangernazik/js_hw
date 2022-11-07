@@ -123,11 +123,11 @@ function smallestNumber(array){
         if(array[i] < min){
             min = array[i]
             let index = i
-            console.log(min)
+
         }
-    }
+    }console.log(min)
 }
-let numArr = [ 41, 24, 33, 35, 12, 40, 13]
+let numArr = [ 11, 24, 33, 35, 12, 40, 13]
 smallestNumber(numArr)
 
 // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
