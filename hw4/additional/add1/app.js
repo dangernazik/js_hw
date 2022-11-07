@@ -217,29 +217,50 @@ for (let i = 1; i < 101; i += 2) {
 }
 
 // стоврити масив книжок (назва, кількість сторінок, автори , жанри).
-let books = [{name: 'Harry Potter', pageCount:423},
-             {name: 'Metro 2033', pageCount:323},
-             {name: 'Peter Pan', pageCount:403}]
+let books = [{name: 'Harry Potter', pageCount:323,authors:["Author1", "Author2"], genre: ["genre1"]},
+        {name: 'Metro 2033', pageCount:423, authors:["Author3"], genre: ["genre1","genre2","genre3"]},
+             {name: 'Peter Pan', pageCount:413, authors:["Author4"], genre: ["genre1","genre2"]}
+]
 
 // -знайти наібльшу книжку.
-let max = books[0].pageCount.length
+let max = books[0].pageCount
 for (let i = 0; i < books.length; i++) {
 
-    if(books[i].pageCount.length > max) {
-        max = books[i].pageCount.length
-        console.log(max);
-
+    if(books[i].pageCount > max) {
+        max = books[i].pageCount
+        console.log("Найбільша книжка це "+books[i].name +" і її кількість сторінок = " + max);
     }
 }
 // - знайти книжку/ки з найбільшою кількістю жанрів
+let max2 = books[0].genre.length
+for (let i = 0; i < books.length; i++) {
+
+    if(books[i].genre.length > max2) {
+        max2 = books[i].genre.length
+        console.log("Найбільше жанрів має книга " + books[i].name +" і її жанри = " + books[i].genre);
+    }
+}
 // - знайти книжку/ки з найдовшою назвою
 let max1 = books[0].name.length
 for (let i = 0; i < books.length; i++) {
 
     if(books[i].name.length > max1) {
-        max1 = books[i].name.length
-        console.log(max1);
+        max1 = books[i].name
+        console.log( "Найдовшу назву має книжка "+ books[i].name +" і її довжина = "+max1);
     }
-    }
+
+}
 // - знайти книжку/ки які писали 2 автори
+for (let i = 0; i < books.length; i++) {
+
+    if(books[i].authors.length > 1) {
+        console.log("Два автори писали книжку "+books[i].name +" і їх імя = " + books[i].authors);
+    }
+}
 // - знайти книжку/ки які писав 1 автор
+for (let i = 0; i < books.length; i++) {
+
+    if(books[i].authors.length === 1) {
+        console.log("Один автор писав книжку " +books[i].name +" і його імя = " + books[i].authors);
+    }
+}
