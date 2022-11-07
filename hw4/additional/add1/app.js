@@ -217,8 +217,8 @@ for (let i = 1; i < 101; i += 2) {
 }
 
 // стоврити масив книжок (назва, кількість сторінок, автори , жанри).
-let books = [{name: 'Harry Potter', pageCount:323,authors:["Author1", "Author2"], genre: ["genre1"]},
-        {name: 'Metro 2033', pageCount:423, authors:["Author3"], genre: ["genre1","genre2","genre3"]},
+let books = [{name: 'Metro 2033', pageCount:523,authors:["Author1", "Author2"], genre: ["genre1"]},
+        {name: 'Harry Potter', pageCount:423, authors:["Author3"], genre: ["genre1","genre2","genre3"]},
              {name: 'Peter Pan', pageCount:413, authors:["Author4"], genre: ["genre1","genre2"]}
 ]
 
@@ -228,8 +228,8 @@ for (let i = 0; i < books.length; i++) {
 
     if(books[i].pageCount > max) {
         max = books[i].pageCount
-        console.log("Найбільша книжка це "+books[i].name +" і її кількість сторінок = " + max);
-    }
+    }   console.log("Найбільша книжка це "+books[i].name +" і її кількість сторінок = " + max);
+
 }
 // - знайти книжку/ки з найбільшою кількістю жанрів
 let max2 = books[0].genre.length
@@ -245,7 +245,7 @@ let max1 = books[0].name.length
 for (let i = 0; i < books.length; i++) {
 
     if(books[i].name.length > max1) {
-        max1 = books[i].name
+        max1 = books[i].name.length
         console.log( "Найдовшу назву має книжка "+ books[i].name +" і її довжина = "+max1);
     }
 
