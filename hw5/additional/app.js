@@ -2,26 +2,26 @@
 // - створити функцію яка приймає три числа та виводить найменше. (Без Math.min!)
 let getSmallestNum = (a, b, c) => {
     let min = a
-    if (a > b) {
+    if (a > b && b < c) {
         min = b
-    } else if (a > c) {
+    } else if (a > c && c < b) {
         min = c
     }
     console.log(min);
 }
-getSmallestNum(31, 44, 42)
+getSmallestNum(31, 44, 12)
 
 // - створити функцію яка приймає три числа та виводить найбільше. (Без Math.max!)
 let getBiggestNum = (a, b, c) => {
     let max = a
-    if (a < b) {
+    if (a < b && b > c) {
         max = b
-    } else if (a < c) {
+    } else if (a < c && c > b) {
         max = c
     }
     console.log(max);
 }
-getBiggestNum(31, 44, 42)
+getBiggestNum(31, 52, 346)
 
 // - створити функцію яка повертає найбільше число з масиву
 let getBiggestNumOfArr = (array) => {
@@ -30,12 +30,11 @@ let getBiggestNumOfArr = (array) => {
         if (array[i] > max) {
             max = array[i]
 
-
         }
     }
     console.log(max)
 }
-arr1 = [31, 3, 35, 6, 6, 7]
+arr1 = [31, 43, 35, 6, 5, 40]
 getBiggestNumOfArr(arr1)
 
 // - створити функцію яка повертає найменше число з масиву
@@ -44,8 +43,6 @@ let getSmallestNumOfArr = (array) => {
     for (let i = 0; i < array.length; i++) {
         if (array[i] < min) {
             min = array[i]
-
-
         }
     }
     console.log(min)
