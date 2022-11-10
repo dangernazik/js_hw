@@ -42,11 +42,12 @@ while(i < 21){
 // замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
 document.write("--")
 let listOfItems =['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+document.write(`<ul>`)
 for (let i = 0; i < listOfItems.length; i++) {
-    document.write(`<ul>
+    document.write(`
     <li class="list">${listOfItems[i]}</li>
-</ul>`)
-}
+`)
+}document.write(`</ul>`)
 
 // Використовуючи данні з масиву, за допомоги document.write та циклу
 // побудувати структуру по шаблону  Зробити адекватну стилізацію
