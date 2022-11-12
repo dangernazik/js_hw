@@ -430,19 +430,19 @@ let myCars = [
 
 
 // Зробити половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
-// let engineRepair = (car => {
-//
-//     for (let i = 0; i < car.length - 6 ; i+=2) {
-//          car[i] = {
-//             carBrand: `${car[i].carBrand}`,
-//             enginePower: car[i].enginePower + (car[i].enginePower / 100 * 10),
-//             owner: {name: `${car[i].owner.name}`, age:`${car[i].owner.age}` , experience: `${car[i].owner.experience}`},
-//             price: `${car[i].price}`,
-//             yearOfProduction: car[i].yearOfProduction
-//         };
-//         console.log(car[i]);
-//     }
-// })
+let engineRepair = (car => {
+
+    for (let i = 0; i < car.length - 6 ; i+=2) {
+         car[i] = {
+            carBrand: `${car[i].carBrand}`,
+            enginePower: car[i].enginePower + (car[i].enginePower / 100 * 10),
+            owner: {name: `${car[i].owner.name}`, age:`${car[i].owner.age}` , experience: `${car[i].owner.experience}`},
+            price: `${car[i].price}`,
+            yearOfProduction: car[i].yearOfProduction
+        };
+        console.log(car[i]);
+    }
+})
 // engineRepair(myCars)
 
 //НЕ РОЗУМІЮ ЯК ЗРОБИТИ  НАСТУПНЕ ЗАВД
@@ -493,12 +493,19 @@ let driversCourse = myCars.reduce((accumulator, owner) => {
 
 console.log(driversCourse);
 // Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
-let sum = 0;
-for (let i = 0; i < myCars.length; i++) {
-    sum += myCars[i].price
-}
-console.log('Сума всіх авто = ' + sum);
+// let sum = 0;
+// for (let i = 0; i < myCars.length; i++) {
+//     sum += myCars[i].price
+// }
+// console.log('Сума всіх авто = ' + sum);
 
+//or
+
+let sum = myCars.reduce((accumulator, car)=>{
+    accumulator = accumulator += car.price
+    return accumulator
+}, 0)
+console.log('Сума всіх авто = ' + sum);
 // Задача: дан отсортированный по возрастанию массив целых чисел. Необходимо вернуть наименьший и наибольший индекс заданного элемента.
 //     Входные данные: arr — массив целых чисел значения которых по модулю не больше 10. Размер массива не более 10 элементов.
 //     Вывод: наибольший и наименьший индекс в массиве заданного элемента. Есвли такого элемента нет в массиве, выведите -1.
