@@ -1,7 +1,6 @@
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
 function countSquareRectangle(a, b) {
-    let res = a * b
-    return res;
+    return  a * b
 }
 
 console.log("Площа прямокутника = " + countSquareRectangle(4, 6))
@@ -9,8 +8,7 @@ console.log("Площа прямокутника = " + countSquareRectangle(4, 6
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 function countSquareTriangle(r) {
     const PI = 3.14
-    let res = PI * Math.pow(r, 2)
-    return res
+    return  PI * Math.pow(r, 2)
 }
 
 console.log("Площа трикутника = " + countSquareTriangle(4))
@@ -125,7 +123,6 @@ function smallestNumber(array){
     for (let i = 0; i < array.length; i++){
         if(array[i] < min){
             min = array[i]
-            let index = i
 
         }
     }console.log(min)
