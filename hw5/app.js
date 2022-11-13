@@ -60,33 +60,36 @@ function getLI(text) {
     document.write(res)
 }
 
-getLI("HI HI I'M GOOD")
+getLI("HELLO")
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий.
 // Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 function getLiCycle(text, i) {
-    let res =
-        `<ul>
-    <li>${text}</li>
-    <li>${text}</li>
-    <li>${text}</li>
-</ul>`
+    document.write(`<ul>`)
+
     for (let k = 0; k < i; k++) {
+        let res =
+            `
+    <li>${text}</li>
+ 
+`
         document.write(res)
-    }
+    } document.write(`</ul>`)
 }
 
-getLiCycle("HI HI I'M BADD", 6)
+getLiCycle("HI HI I'M BADD", 7)
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 function getArrList(array){
+    document.write(`<ul>`)
     for (let i = 0; i < array.length; i++){
         let res =
-            `<ul>
+            `
     <li>${array[i]}</li>
-</ul>`
+`
         document.write(res)
-    }
+    }   document.write(`</ul>`)
+
 }
 
 let arr = ['hi', 123, 234, true, 'how are u?', 32, 155, 12.455, 83, "ten"];
