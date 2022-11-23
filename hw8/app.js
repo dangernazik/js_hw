@@ -12,13 +12,7 @@ let user1 = new User(0, 'taras', 'dovbyk', 'asadsad@gmail.com', '0973254254')
 
 let userArr = []
 for (let i = 0; i < 10; i++) {
-    user1 = {
-        id: +`${user1.id}` + 1,
-        name: `${user1.name}`,
-        surname: `${user1.surname}`,
-        email: `${user1.email}`,
-        phone: `${user1.phone}`
-    }
+    user1 = {...user1, id: +`${user1.id}` + 1,}
     userArr.push(user1)
 }
 console.log(userArr)
@@ -46,14 +40,7 @@ class Client {
 let clientsArr = []
 let client1 = new Client(0, 'taras', 'dovbyk', 'asadsad@gmail.com', '0973254254', ['laptop', 'phone', 'keyboard'])
 for (let i = 0; i < 10; i++) {
-    client1 = {
-        id: +`${client1.id}` + 1,
-        name: `${client1.name}`,
-        surname: `${client1.surname}`,
-        email: `${client1.email}`,
-        phone: `${client1.phone}`,
-        order: [`${client1.order}`]
-    }
+    client1 = {...client1, id: +`${client1.id}` + 1}
     clientsArr.push(client1)
 }
 console.log(clientsArr)
@@ -75,63 +62,45 @@ function Car1(model, producer, year, maxSpeed, engine) {
     this.maxSpeed = maxSpeed
     this.engine = engine
 }
-    function drive(Car1)
-    {
-       return console.log("Їдемо зі швидкістю " + Car1.maxSpeed)
-    }
-    function info(Car1)
-    {
-        for (const thisKey in Car1) {
-            console.log(thisKey, Car1[thisKey])
-        }
-    }
-    function increaseMaxSpeed (Car1, newSpeed)
-    {
-        Car1.maxSpeed = newSpeed
-        let car = {
-            model: `${Car1.model}`,
-            producer: `${Car1.producer}`,
-            year: +`${Car1.year}`,
-            maxSpeed: newSpeed,
-            engine: +`${Car1.engine}`
-        }
-        console.log(car);
-        console.log('===================')
-    }
 
-    function changeYear (Car1, newValue)
-    {
-        Car1.year = newValue
-        let car = {
-            model: `${Car1.model}`,
-            producer: `${Car1.producer}`,
-            year: newValue,
-            maxSpeed: +`${Car1.maxSpeed}`,
-            engine: +`${Car1.engine}`
-        }
-        console.log(car);
-        console.log('===================')
+function drive(Car1) {
+    return console.log("Їдемо зі швидкістю " + Car1.maxSpeed)
+}
+
+function info(Car1) {
+    for (const thisKey in Car1) {
+        console.log(thisKey, Car1[thisKey])
     }
-    function addDriver(Car1, newDriver){
-        newDriver = {
-            name: newDriver.name,
-            age: newDriver.age
-        }
-        let car = {
-            model: `${Car1.model}`,
-            producer: `${Car1.producer}`,
-            year: +`${Car1.year}`,
-            maxSpeed: +`${Car1.maxSpeed}`,
-            engine: +`${Car1.engine}`,
-            driver: newDriver
-        }
-        console.log(car);
-        console.log('===================')
+}
+
+function increaseMaxSpeed(Car1, newSpeed) {
+    Car1.maxSpeed = newSpeed
+    let car = {...Car1, maxSpeed: newSpeed,}
+    console.log(car);
+    console.log('===================')
+}
+
+function changeYear(Car1, newValue) {
+    Car1.year = newValue
+    let car = {...Car1, year: newValue,}
+    console.log(car);
+    console.log('===================')
+}
+
+function addDriver(Car1, newDriver) {
+    newDriver = {
+        name: newDriver.name,
+        age: newDriver.age
     }
+    let car = {...Car1, driver: newDriver}
+    console.log(car);
+    console.log('===================')
+}
+
 let car1 = new Car1('rs6', 'audi', 2017, 280, 3)
 drive(car1)
 info(car1)
-increaseMaxSpeed(car1,421)
+increaseMaxSpeed(car1, 421)
 changeYear(car1, 2020)
 let driver1 = {name: "mike", age: 42}
 addDriver(car1, driver1)
@@ -164,13 +133,7 @@ class Car {
     // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
     increaseMaxSpeed(newSpeed) {
         Car.maxSpeed = newSpeed
-        let car = {
-            model: `${this.model}`,
-            producer: `${this.producer}`,
-            year: +`${this.year}`,
-            maxSpeed: +`${Car.maxSpeed}`,
-            engine: +`${this.engine}`
-        }
+        let car = {...this, maxSpeed: +`${Car.maxSpeed}`,}
         console.log(car);
         console.log('===================')
     }
@@ -178,13 +141,7 @@ class Car {
     // -- changeYear (newValue) - змінює рік випуску на значення newValue
     changeYear(newValue) {
         Car.year = newValue
-        let car = {
-            model: `${this.model}`,
-            producer: `${this.producer}`,
-            year: +`${Car.year}`,
-            maxSpeed: +`${this.maxSpeed}`,
-            engine: +`${this.engine}`
-        }
+        let car = {...this, year: +`${Car.year}`,}
         console.log(car);
         console.log('===================')
     }
@@ -195,21 +152,14 @@ class Car {
             name: newDriver.name,
             age: newDriver.age
         }
-        let car = {
-            model: `${this.model}`,
-            producer: `${this.producer}`,
-            year: +`${this.year}`,
-            maxSpeed: +`${this.maxSpeed}`,
-            engine: +`${this.engine}`,
-            driver: newDriver
-        }
+        let car = {...this, driver: newDriver}
         console.log(car);
         console.log('===================')
     }
 
 }
+
 let car = new Car('rs6', 'audi', 2017, 280, 3)
-console.log(car);
 car.drive()
 car.info()
 car.increaseMaxSpeed(231)
@@ -230,8 +180,9 @@ class Cinderella {
 
 
 }
-class Prince{
-    constructor( name, age, shoe) {
+
+class Prince {
+    constructor(name, age, shoe) {
         this.name = name;
         this.age = age;
         this.shoe = shoe;
@@ -239,21 +190,21 @@ class Prince{
 }
 
 let cinderellas = [cinderella = new Cinderella('anna', 32, 36),
-                   cinderella = new Cinderella('anna', 21, 37),
-                   cinderella = new Cinderella('anna', 22, 36),
-                   cinderella = new Cinderella('anna', 23, 37),
-                   cinderella = new Cinderella('anna', 24, 36),
-                   cinderella = new Cinderella('anna', 25, 37),
-                   cinderella = new Cinderella('anna', 26, 35),
-                   cinderella = new Cinderella('olya', 27, 38),
-                   cinderella = new Cinderella('anna', 28, 39),
-                   cinderella = new Cinderella('anna', 29, 35),
+    cinderella = new Cinderella('anna', 21, 37),
+    cinderella = new Cinderella('anna', 22, 36),
+    cinderella = new Cinderella('anna', 23, 37),
+    cinderella = new Cinderella('anna', 24, 36),
+    cinderella = new Cinderella('anna', 25, 37),
+    cinderella = new Cinderella('anna', 26, 35),
+    cinderella = new Cinderella('olya', 27, 38),
+    cinderella = new Cinderella('anna', 28, 39),
+    cinderella = new Cinderella('anna', 29, 35),
 ]
 let prince = new Prince('tom', 30, 38)
 console.log(prince);
 for (let i = 0; i < cinderellas.length; i++) {
-    if (prince.shoe === cinderellas[i].footSize){
-        console.log( `Принц ${prince.name} повинен бути з попелюшкою ${cinderellas[i].name} у якої розмір ноги ${cinderellas[i].footSize}`)
+    if (prince.shoe === cinderellas[i].footSize) {
+        console.log(`Принц ${prince.name} повинен бути з попелюшкою ${cinderellas[i].name} у якої розмір ноги ${cinderellas[i].footSize}`)
     }
 }
 let filteredCinderella = cinderellas.find(foot => foot.footSize === 38)
