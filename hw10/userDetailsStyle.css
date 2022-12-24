@@ -5,6 +5,8 @@ body{
 
 .wrap{
     background: silver;
+    border-radius: 15px;
+    width: 400px;
 }
 .div{
     margin-left: 20px;
