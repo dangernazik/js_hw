@@ -61,9 +61,11 @@ fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
                         li.classList.add('post')
                         li.appendChild(a)
                         ul.append(li)
+
                     }
                     document.body.appendChild(ul)
                 })
+            button.disabled = "true"
         }
 
     });
